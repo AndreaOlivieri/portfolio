@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
 import { socials } from "../data/socials";
+import { colors } from "../constants/theme";
 
 const Header: React.FC = () => {
   // Handle clicks on buttons within the header
@@ -61,7 +62,7 @@ const Header: React.FC = () => {
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
-      backgroundColor="#18181b"
+  backgroundColor={colors.background}
       ref={headerRef}
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">

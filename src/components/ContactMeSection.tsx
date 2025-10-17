@@ -16,6 +16,7 @@ import * as Yup from 'yup';
 import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
+import { colors } from "../constants/theme";
 
 type FormValues = {
   firstName: string;
@@ -59,7 +60,7 @@ const ContactMeSection: React.FC = () => {
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundColor="#512DA8"
+        backgroundColor={colors.contactBg}
       py={16}
       spacing={8}
     >

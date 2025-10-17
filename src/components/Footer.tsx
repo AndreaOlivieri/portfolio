@@ -1,9 +1,10 @@
 import React from "react";
 import {Box, Flex} from "@chakra-ui/react";
+import { colors } from "../constants/theme";
 
 const Footer: React.FC = () => {
   return (
-    <Box backgroundColor="#18181b">
+    <Box backgroundColor={colors.background}>
       <footer>
         <Flex
           margin="0 auto"

@@ -7,8 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root{
+  --app-background: #18181b;
+}
+
 html {
-  background-color: #18181b;
+  background-color: var(--app-background);
 }
 
 code {

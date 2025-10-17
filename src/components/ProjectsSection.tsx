@@ -3,11 +3,12 @@ import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 import { projects } from "../data/projects";
+import { colors } from "../constants/theme";
 
 const ProjectsSection: React.FC = () => {
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
+      backgroundColor={colors.projectsBg}
       isDarkBackground
       p={8}
       alignItems="flex-start"
