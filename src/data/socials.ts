@@ -3,16 +3,12 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
-  faMedium,
-  faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 
 export type Social = { icon: IconDefinition; url: string };
 
 export const socials: Social[] = [
-  { icon: faEnvelope, url: "mailto: hello@example.com" },
-  { icon: faGithub, url: "https://github.com/" },
-  { icon: faLinkedin, url: "#" },
-  { icon: faMedium, url: "https://medium.com" },
-  { icon: faStackOverflow, url: "https://stackoverflow.com" },
+  { icon: faEnvelope, url: "mailto: oli.andrea17@gmail.com" },
+  { icon: faGithub, url: "https://github.com/AndreaOlivieri" },
+  { icon: faLinkedin, url: "https://it.linkedin.com/in/andrea-olivieri" },
 ];
