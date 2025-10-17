@@ -12,7 +12,7 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
@@ -35,7 +35,7 @@ const ContactMeSection: React.FC = () => {
       firstName: "",
       email: "",
       type: "hireMe",
-      comment: ""
+      comment: "",
     },
     onSubmit: (values) => {
       submit("", values);
@@ -43,8 +43,10 @@ const ContactMeSection: React.FC = () => {
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      comment: Yup.string().min(25, "Must be at least 25 characters").required("Required")
-    })
+      comment: Yup.string()
+        .min(25, "Must be at least 25 characters")
+        .required("Required"),
+    }),
   });
 
   // Show an alert when the form is submitted successfully
@@ -52,15 +54,14 @@ const ContactMeSection: React.FC = () => {
     if (response) {
       onOpen(response.type, response.message);
       // Reset the form if the response is successful
-      if (response.type === "success")
-        formik.resetForm();
+      if (response.type === "success") formik.resetForm();
     }
   }, [response]);
 
   return (
     <FullScreenSection
       isDarkBackground
-        backgroundColor={colors.contactBg}
+      backgroundColor={colors.contactBg}
       py={16}
       spacing={8}
     >
@@ -73,7 +74,11 @@ const ContactMeSection: React.FC = () => {
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
               {/* Show the error messages for each field when the field is touched and the validation fails */}
-              <FormControl isInvalid={!!formik.errors.firstName && formik.touched.firstName}>
+              <FormControl
+                isInvalid={
+                  !!formik.errors.firstName && formik.touched.firstName
+                }
+              >
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
                   id="firstName"
@@ -83,7 +88,9 @@ const ContactMeSection: React.FC = () => {
                 {/* Show the error messages for each field when the field is touched and the validation fails */}
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
-              <FormControl isInvalid={!!formik.errors.email && formik.touched.email}>
+              <FormControl
+                isInvalid={!!formik.errors.email && formik.touched.email}
+              >
                 {/* Show the error messages for each field when the field is touched and the validation fails */}
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
@@ -110,7 +117,9 @@ const ContactMeSection: React.FC = () => {
                 </Select>
               </FormControl>
               {/* Show the error messages for each field when the field is touched and the validation fails */}
-              <FormControl isInvalid={!!formik.errors.comment && formik.touched.comment}>
+              <FormControl
+                isInvalid={!!formik.errors.comment && formik.touched.comment}
+              >
                 <FormLabel htmlFor="comment">Your message</FormLabel>
                 <Textarea
                   id="comment"
@@ -122,7 +131,12 @@ const ContactMeSection: React.FC = () => {
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
               {/* Show a loading indicator */}
-              <Button type="submit" colorScheme="purple" width="full" isLoading={isLoading}>
+              <Button
+                type="submit"
+                colorScheme="purple"
+                width="full"
+                isLoading={isLoading}
+              >
                 Submit
               </Button>
             </VStack>

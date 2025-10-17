@@ -6,7 +6,11 @@ type FullScreenSectionProps = StackProps & {
   isDarkBackground?: boolean;
 };
 
-const FullScreenSection: React.FC<FullScreenSectionProps> = ({ children, isDarkBackground, ...boxProps }) => {
+const FullScreenSection: React.FC<FullScreenSectionProps> = ({
+  children,
+  isDarkBackground,
+  ...boxProps
+}) => {
   return (
     <VStack
       backgroundColor={boxProps.backgroundColor}

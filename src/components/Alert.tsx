@@ -15,9 +15,16 @@ const Alert: React.FC = () => {
   const isSuccess = type === "success";
 
   return (
-    <AlertDialog isOpen={isOpen} leastDestructiveRef={cancelRef} onClose={onClose}>
+    <AlertDialog
+      isOpen={isOpen}
+      leastDestructiveRef={cancelRef}
+      onClose={onClose}
+    >
       <AlertDialogOverlay>
-  <AlertDialogContent py={4} backgroundColor={isSuccess ? colors.alertSuccess : colors.alertError}>
+        <AlertDialogContent
+          py={4}
+          backgroundColor={isSuccess ? colors.alertSuccess : colors.alertError}
+        >
           <AlertDialogHeader fontSize="lg" fontWeight="bold">
             {isSuccess ? "All good!" : "Oops!"}
           </AlertDialogHeader>
