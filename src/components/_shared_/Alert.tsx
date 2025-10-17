@@ -6,8 +6,8 @@ import {
   AlertDialogHeader,
   AlertDialogOverlay,
 } from "@chakra-ui/react";
-import { useAlertContext } from "../context/alertContext";
-import { colors } from "../constants/theme";
+import { useAlertContext } from "../../context/alertContext";
+import { colors } from "../../constants/theme";
 
 const Alert: React.FC = () => {
   const { isOpen, type, message, onClose } = useAlertContext();

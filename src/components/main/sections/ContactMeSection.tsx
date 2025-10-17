@@ -14,9 +14,9 @@ import {
 } from "@chakra-ui/react";
 import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
-import useSubmit from "../hooks/useSubmit";
-import { useAlertContext } from "../context/alertContext";
-import { colors } from "../constants/theme";
+import useSubmit from "../../../hooks/useSubmit";
+import { useAlertContext } from "../../../context/alertContext";
+import { colors } from "../../../constants/theme";
 
 type FormValues = {
   firstName: string;

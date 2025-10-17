@@ -1,9 +1,9 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
-import Card from "./Card";
-import { projects } from "../data/projects";
-import { colors } from "../constants/theme";
+import Card from "../../_shared_/Card";
+import { projects } from "../../../data/projects";
+import { colors } from "../../../constants/theme";
 
 const ProjectsSection: React.FC = () => {
   return (

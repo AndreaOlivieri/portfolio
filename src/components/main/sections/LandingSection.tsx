@@ -1,8 +1,8 @@
 import React from "react";
 import { Avatar, Heading, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import { greeting, bio1, bio2 } from "../data/landing";
-import { colors } from "../constants/theme";
+import { greeting, bio1, bio2 } from "../../../data/landing";
+import { colors } from "../../../constants/theme";
 
 const LandingSection: React.FC = () => (
   <FullScreenSection
@@ -11,7 +11,7 @@ const LandingSection: React.FC = () => (
     isDarkBackground
     backgroundColor={colors.landingBg}
   >
-    <Avatar src={require("../images/profile_image.jpg")} size="2xl" />
+    <Avatar src={require("../../../images/profile_image.jpg")} size="2xl" />
     <VStack spacing={3} mt={6}>
       <Heading as="h3" size="md" noOfLines={1}>
         {greeting}

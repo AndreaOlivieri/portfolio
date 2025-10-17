@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, HStack } from "@chakra-ui/react";
-import { socials } from "../data/socials";
-import { colors } from "../constants/theme";
+import { socials } from "../../data/socials";
+import { colors } from "../../constants/theme";
 
 const Header: React.FC = () => {
   // Handle clicks on buttons within the header
