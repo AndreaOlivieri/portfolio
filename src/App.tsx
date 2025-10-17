@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
@@ -12,14 +12,14 @@ const App: React.FC = () => {
   return (
     <ChakraProvider>
       <AlertProvider>
+        <Header />
         <main>
-          <Header />
           <LandingSection />
           <ProjectsSection />
           <ContactMeSection />
-          <Footer />
-          <Alert />
         </main>
+        <Footer />
+        <Alert />
       </AlertProvider>
     </ChakraProvider>
   );
