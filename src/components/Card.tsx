@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const Card = ({ title, description, imageSrc }) => {
-  // Implement the UI for the Card component according to the instructions.
-  // You should be able to implement the component with the elements imported above.
-  // Feel free to import other UI components from Chakra UI if you wish to.
+type CardProps = {
+  title: string;
+  description: string;
+  imageSrc: string;
+};
 
-   return (
+const Card: React.FC<CardProps> = ({ title, description, imageSrc }) => {
+  return (
     <VStack
       w="100%"
       bg="white"

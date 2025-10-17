@@ -1,8 +1,7 @@
 import React from "react";
 import {Box, Flex} from "@chakra-ui/react";
 
-const Footer = () => {
-  const date =  Date();
+const Footer: React.FC = () => {
   return (
     <Box backgroundColor="#18181b">
       <footer>

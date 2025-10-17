@@ -1,3 +1,4 @@
+import React from 'react';
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
@@ -7,7 +8,7 @@ import Footer from "./components/Footer";
 import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
 
-function App() {
+const App: React.FC = () => {
   return (
     <ChakraProvider>
       <AlertProvider>
@@ -22,6 +23,6 @@ function App() {
       </AlertProvider>
     </ChakraProvider>
   );
-}
+};
 
 export default App;

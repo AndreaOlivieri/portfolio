@@ -30,7 +30,7 @@ const projects = [
   },
 ];
 
-const ProjectsSection = () => {
+const ProjectsSection: React.FC = () => {
   return (
     <FullScreenSection
       backgroundColor="#14532d"

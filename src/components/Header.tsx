@@ -32,9 +32,9 @@ const socials = [
   },
 ];
 
-const Header = () => {
+const Header: React.FC = () => {
   // Handle clicks on buttons within the header
-  const handleClick = (anchor) => () => {
+  const handleClick = (anchor: string) => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
     if (element) {
@@ -46,7 +46,7 @@ const Header = () => {
   };
 
   // Handle header show/hide animation depending on the scroll direction
-  const headerRef = useRef(null);
+  const headerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let prevScrollPos = window.scrollY;
@@ -54,16 +54,13 @@ const Header = () => {
     // Handle scroll events
     const handleScroll = () => {
       const currScrollPos = window.scrollY;
-      const currHeaderElement = headerRef.current;
+      const currHeaderElement = headerRef.current as unknown as HTMLElement | null;
 
-      if (!currHeaderElement)
-        return;
-    
-      if (prevScrollPos > currScrollPos)
-        currHeaderElement.style.transform = "translateY(0)";
-      else
-        currHeaderElement.style.transform = "translateY(-200px)";
-      
+      if (!currHeaderElement) return;
+
+      if (prevScrollPos > currScrollPos) currHeaderElement.style.transform = "translateY(0)";
+      else currHeaderElement.style.transform = "translateY(-200px)";
+
       prevScrollPos = currScrollPos;
     };
 
@@ -99,9 +96,9 @@ const Header = () => {
           <nav>
             {/* Add social media links based on the `socials` data */}
             <HStack spacing={10}>
-              {socials.map(({icon, url}) => (
-                <a key={url} href={url} icon={icon} target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon key={url} icon={icon} size="2x"/>
+              {socials.map(({ icon, url }) => (
+                <a key={url} href={url} target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={icon} size="2x" />
                 </a>
               ))}
             </HStack>

@@ -17,11 +17,18 @@ import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
 
-const ContactMeSection = () => {
+type FormValues = {
+  firstName: string;
+  email: string;
+  type: string;
+  comment: string;
+};
+
+const ContactMeSection: React.FC = () => {
   const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
 
-  const formik = useFormik({
+  const formik = useFormik<FormValues>({
     // Form validation
     initialValues: {
       firstName: "",
@@ -89,8 +96,8 @@ const ContactMeSection = () => {
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
-                <Select 
-                  id="type" 
+                <Select
+                  id="type"
                   name="type"
                   {...formik.getFieldProps("type")} // Make the Input components from Chakra UI controlled components
                 >
